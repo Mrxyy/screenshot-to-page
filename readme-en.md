@@ -46,5 +46,3 @@ yarn dev;
 + [local-mk-editor-in-browser](https://github.com/Mrxyy/local-mk-editor-in-browser) 👷
 + [chat-query](https://github.com/Mrxyy/chat-query.git) 📖 
 ```
-
-This is a direct translation of the provided content into English while retaining the Markdown formatting for a README file. If you need any additional details or sections translated, feel free to ask!
