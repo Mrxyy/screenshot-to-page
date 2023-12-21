@@ -28,6 +28,10 @@ body {
     --pc: rgb(var(--primary-6));
 }
 
+body {
+    background: rgb(144 252 255 /10%);
+}
+
 body.fs {
     --primary-1: 255, 255, 255;
     --primary-2: 255, 247, 230;
