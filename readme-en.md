@@ -30,15 +30,14 @@
  
 ## Developers 💪
 ```sh
-  # pnpm
-	pnpm i;
-	pnpm dev;
+# pnpm
+pnpm i;
+pnpm dev;
 ```
 ```sh
-	
-	# yarn
-	yarn;
-	yarn dev;
+# yarn
+yarn;
+yarn dev;
 ```
 ## Acknowledgements 🙏
 + Original repository: [screenshot-to-code](https://github.com/abi/screenshot-to-code/blob/main/README.md) 

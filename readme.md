@@ -1,5 +1,5 @@
 [en](./readme-en.md)
-<h1 align="center"> screenshot-to-page</h1>
+<h1 align="center">screenshot-to-page</h1>
 
 > **可以将截图、图片链接、绘制草图通过PT-4 Vision生成代码并换为页面，支持一键部署 ☁️**。
 
@@ -31,15 +31,14 @@
  
 ## 开发者 💪
 ``` sh
-  # pnpm
-	pnpm i；
-	pnpm dev；
+# pnpm
+pnpm i；
+pnpm dev；
 ```
 ``` sh
-	
-	# yarn
-	yarn；
-	yarn dev；
+# yarn
+yarn；
+yarn dev；
 ```
 ## 感谢 🙏
 + 原仓库: [screenshot-to-code](https://github.com/abi/screenshot-to-code/blob/main/README.md) 
