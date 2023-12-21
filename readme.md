@@ -22,7 +22,7 @@
 ## 部署 🪤
 ### docker 
 ``` sh
-	docker run -p  3000:3000 jadenxiong/screenshot-to-page:0.12
+docker run -p  3000:3000 jadenxiong/screenshot-to-page
 ```
 ### vercel
 + 点击右侧按钮开始部署：![Deploy with Vercel](https://vercel.com/button)
