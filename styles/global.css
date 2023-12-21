@@ -1,0 +1,515 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+svg {
+    display: inline-block;
+}
+
+.app-text {
+    @apply bg-gradient-to-br from-orange-500 bg-clip-text text-transparent;
+    background-color: var(--pc);
+    text-shadow: 2px 2px 0px rgba(var(--primary-6), 0.2);
+}
+
+body {
+    --primary-1: 214, 235, 233;
+    --primary-2: 182, 219, 216;
+    --primary-3: 150, 202, 199;
+    --primary-4: 118, 185, 182;
+    --primary-5: 76, 158, 165;
+    --primary-6: 94, 171, 165;
+    --primary-7: 76, 139, 148;
+    --primary-8: 58, 107, 132;
+    --primary-9: 40, 74, 117;
+    --primary-10: 22, 42, 102;
+
+    --white-bg: rgb(247, 247, 247);
+    --pc: rgb(var(--primary-6));
+}
+
+body.fs {
+    --primary-1: 255, 255, 255;
+    --primary-2: 255, 247, 230;
+    --primary-3: 255, 222, 195;
+    --primary-4: 255, 196, 161;
+    --primary-5: 255, 171, 127;
+    --primary-6: 255, 147, 92;
+    --primary-7: 255, 123, 58;
+    --primary-8: 255, 99, 23;
+    --primary-9: 235, 79, 0;
+    --primary-10: 176, 60, 0;
+    .app-text {
+        @apply bg-gradient-to-br from-green-500 bg-clip-text text-transparent;
+        background-color: var(--pc);
+        text-shadow: 2px 2px 0px rgba(var(--primary-6), 0.2);
+    }
+}
+
+body:not([arco-theme='dark']) {
+    .graphs-list {
+        .arco-list-header {
+            background: var(--pc);
+            color: #fcf9f9;
+        }
+    }
+}
+
+body[arco-theme='dark'] {
+    --primary-1: 35, 81, 78;
+    --primary-2: 43, 89, 86;
+    --primary-3: 51, 97, 94;
+    --primary-4: 59, 105, 102;
+    --primary-5: 67, 113, 110;
+    --primary-6: 75, 121, 118;
+    --primary-7: 83, 129, 126;
+    --primary-8: 91, 137, 134;
+    --primary-9: 99, 145, 142;
+    --primary-10: 107, 153, 150;
+    --color-text-2: rgba(230, 230, 230, 0.9);
+    --color-text-3: rgba(204, 204, 204, 0.9);
+    --color-text-4: rgba(179, 179, 179, 0.9);
+    --color-text-5: rgba(153, 153, 153, 0.9);
+    --color-text-6: rgba(128, 128, 128, 0.9);
+    --color-text-7: rgba(102, 102, 102, 0.9);
+    --color-text-8: rgba(77, 77, 77, 0.9);
+    --color-text-9: rgba(51, 51, 51, 0.9);
+    --color-text-10: rgba(26, 26, 26, 0.9);
+    --white-bg: rgb(217, 217, 217);
+    --pc: rgb(var(--primary-6));
+
+    .shadow {
+        --tw-shadow: 0 1px 3px 0 rgb(200 200 200 / 0.5), 0 1px 2px -1px rgb(200 200 200 / 0.1);
+    }
+
+    .arco-input {
+        color: rgb(var(--primary-6));
+    }
+
+    .graphs-list {
+        .arco-list-header {
+            background: #3f3e3e;
+            color: #fcf9f9;
+        }
+    }
+
+    .app-text {
+        text-shadow: 2px 2px 2px rgb(255 255 255/0.2);
+    }
+}
+
+.monaco-editor.monaco-editor {
+    --vscode-editorLineNumber-activeForeground: var(--pc);
+
+    .line-numbers {
+        font-weight: bold;
+    }
+
+    .view-lines,
+    .decorationsOverviewRuler,
+    .invisible {
+        background: rgb(233, 242, 241, 0.4);
+    }
+
+    .selected-text {
+        background: rgba(255, 166, 0, 0.53) !important;
+    }
+
+    .slider.slider {
+        border-radius: 5px;
+        background: var(rgb(--primary-6));
+
+        &:hover {
+            background: var(rgb(--primary-3));
+        }
+    }
+}
+
+.minimap {
+    background-color: rgb(94 171 165 / 0.1);
+}
+
+.monaco-editor .monaco-scrollable-element .current-line.current-line {
+    background-color: rgb(94 171 165 / 0.1);
+    border: none;
+    border-top: 2px solid rgb(238, 238, 238，0.5);
+    border-bottom: 2px solid rgb(238, 238, 238，0.5);
+}
+
+.table {
+    display: block;
+}
+
+.minimap-decorations-layer {
+    background: rgba(0, 128, 128, 0.1);
+}
+
+.margin-view-overlays {
+    background: rgb(0 128 128 / 14%);
+}
+
+.arco-tabs-content {
+    padding: 0;
+}
+
+.form-item label {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    display: block;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, rgba(255, 165, 0, 0.8), rgba(0, 255, 64, 0.8));
+    animation: change-shadow 1s linear infinite alternate-reverse;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-animation {
+    background: linear-gradient(to right, rgba(255, 165, 0, 0.8), rgba(0, 255, 64, 0.8));
+    animation: change-shadow1 3s linear infinite alternate-reverse;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes change-shadow1 {
+    0% {
+        background: linear-gradient(to right, rgba(255, 165, 0, 0.8), rgba(0, 255, 64, 0.8));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 4px 4px rgba(0, 255, 0, 0.2);
+    }
+
+    20% {
+        background: linear-gradient(to right, rgba(255, 68, 0, 0.8), rgba(183, 0, 255, 0.8));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 4px 4px rgba(255, 64, 0, 0.2);
+    }
+
+    40% {
+        background: linear-gradient(to right, rgba(0, 26, 255, 0.8), rgba(255, 81, 0, 0.8));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 4px 4px rgba(0, 26, 255, 0.2);
+    }
+
+    60% {
+        background: linear-gradient(to right, rgba(255, 0, 166, 0.8), rgba(0, 149, 255, 0.8));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 4px 4px rgba(251, 0, 255, 0.2);
+    }
+
+    80% {
+        background: linear-gradient(to right, rgba(221, 255, 0, 0.8), rgba(255, 0, 238, 0.8));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 4px 4px rgba(0, 255, 157, 0.2);
+    }
+
+    100% {
+        background: linear-gradient(to right, rgba(0, 85, 255, 0.8), rgba(255, 0, 0, 0.8));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 4px 4px rgba(255, 166, 0, 0.4);
+    }
+}
+
+.simple-mode {
+    border-radius: 10px;
+    overflow: hidden;
+
+    .arco-input-group {
+        .arco-input-inner-wrapper {
+            background: #fff;
+            border-radius: 10px;
+        }
+    }
+}
+
+.simple-mode-border {
+    border-radius: 5px;
+    overflow: hidden;
+
+    .arco-input-group {
+        .arco-input-inner-wrapper {
+            background: #fff;
+            border-radius: 5px;
+            @apply border border-[var(--pc)]  transition-all;
+            &.arco-input-inner-wrapper-focus {
+                @apply rounded-[10px] border-2;
+            }
+        }
+    }
+}
+
+.bg-main {
+    background: rgb(var(--primary-6));
+}
+
+.arco-input-disabled:disabled {
+    color: rgb(var(--primary-3));
+    -webkit-text-fill-color: rgb(var(--primary-3));
+}
+
+.auto-h {
+    .arco-form-item-control {
+        min-height: 0;
+    }
+
+    > .arco-col {
+        flex: 1;
+    }
+}
+
+.sessions—box {
+    --color-neutral-3: rgba(0, 128, 128, 0.3);
+    .arco-comment-inner {
+        max-width: calc(100% - 12px - 15px - 34px - 34px);
+    }
+}
+
+.shadow-t {
+    box-shadow: 0 -5px 10px 0px rgba(130, 130, 130, 0.1);
+}
+
+.widgetPicker {
+    .arco-select-view {
+        background: transparent !important;
+        border: none !important;
+    }
+}
+
+#fireworks {
+    position: relative;
+    z-index: -1;
+}
+
+.form-inline,
+.form-inline-v {
+    > .form-group {
+        width: 100%;
+    }
+    .control-label {
+        margin: 0 10px;
+        width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .form-group {
+        margin: 10px;
+    }
+    fieldset {
+        /* display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .form-group {
+            width: 20%;
+        } */
+        display: grid;
+        /* grid-template-columns: repeat(auto-fill, 25%);
+         */
+        grid-template-columns: repeat(auto-fill, 25%);
+        justify-content: space-between;
+    }
+}
+
+.form-inline-v {
+    fieldset {
+        > .form-group {
+            display: inline-flex;
+        }
+        grid-template-columns: repeat(auto-fill, 50%);
+    }
+}
+
+.form-v {
+    fieldset {
+        > .form-group {
+            display: inline-flex;
+            .control-label {
+                margin: 0 10px;
+                width: 100px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+}
+
+.arco-comment.user {
+    flex-direction: row-reverse;
+    .arco-comment-title {
+        justify-content: end;
+        display: flex;
+    }
+    .arco-comment-avatar {
+        margin: 0;
+        margin-left: 12px;
+    }
+    .arco-comment-author {
+        margin: 0;
+        margin-left: 8px;
+    }
+    .arco-comment-inner-content {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: end; */
+        align-items: end;
+    }
+    .arco-comment-content {
+        width: max-content;
+        max-width: 100%;
+        .message {
+            width: max-content;
+        }
+    }
+}
+
+.arco-comment-title {
+    margin-top: 5px;
+    font-size: 18px;
+}
+
+/* Image Scanning animation */
+.scanning::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 5px;
+    height: 100%;
+    background-image: linear-gradient(
+        to right,
+        rgba(19, 161, 14, 0.2),
+        /* Darker matrix green with full transparency */ rgba(19, 161, 14, 0.8)
+            /* The same green with 80% opacity */
+    );
+    animation: scanning 3s ease-in-out infinite;
+}
+
+@keyframes scanning {
+    0%,
+    100% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(340px);
+    }
+}
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 222.2 84% 4.9%;
+
+        --card: 0 0% 100%;
+        --card-foreground: 222.2 84% 4.9%;
+
+        --popover: 0 0% 100%;
+        --popover-foreground: 222.2 84% 4.9%;
+
+        --primary: 222.2 47.4% 11.2%;
+        --primary-foreground: 210 40% 98%;
+
+        --secondary: 210 40% 96.1%;
+        --secondary-foreground: 222.2 47.4% 11.2%;
+
+        --muted: 210 40% 96.1%;
+        --muted-foreground: 215.4 16.3% 46.9%;
+
+        --accent: 210 40% 96.1%;
+        --accent-foreground: 222.2 47.4% 11.2%;
+
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 210 40% 98%;
+
+        --border: 214.3 31.8% 91.4%;
+        --input: 214.3 31.8% 91.4%;
+        --ring: 222.2 84% 4.9%;
+
+        --radius: 0.5rem;
+    }
+
+    body.dark {
+        background-color: black;
+    }
+
+    div[role='presentation'].dark {
+        background-color: #09090b !important;
+    }
+
+    iframe {
+        background-color: white !important;
+    }
+
+    .dark {
+        --background: 222.2 0% 0%;
+        --foreground: 210 40% 98%;
+
+        --card: 222.2 84% 4.9%;
+        --card-foreground: 210 40% 98%;
+
+        --popover: 222.2 84% 4.9%;
+        --popover-foreground: 210 40% 98%;
+
+        --primary: 210 40% 98%;
+        --primary-foreground: 222.2 47.4% 11.2%;
+
+        --secondary: 217.2 32.6% 17.5%;
+        --secondary-foreground: 210 40% 98%;
+
+        --muted: 217.2 32.6% 17.5%;
+        --muted-foreground: 215 20.2% 65.1%;
+
+        --accent: 217.2 32.6% 17.5%;
+        --accent-foreground: 210 40% 98%;
+
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 210 40% 98%;
+
+        --border: 217.2 32.6% 17.5%;
+        --input: 217.2 32.6% 17.5%;
+        --ring: 212.7 26.8% 83.9%;
+    }
+}
+
+@layer base {
+    * {
+        border-color: hsl(var(--border));
+    }
+    body {
+        background-color: hsl(var(--background));
+        color: hsl(var(--foreground));
+    }
+}
+
+.excalidraw-modal-container {
+    pointer-events: auto;
+}
+
+.excalidraw .layer-ui__wrapper__top-right {
+    margin-right: 60px;
+}
+/* 隐藏excalidraw links*/
+.dropdown-menu-container .dropdown-menu-group {
+    display: none;
+}
+
+button.arco-switch {
+    background-color: var(--color-fill-4);
+    &.arco-switch-checked {
+        background-color: var(--pc);
+    }
+}
+
+.Draw {
+    .arco-tabs-header-wrapper {
+        justify-content: end;
+    }
+}
