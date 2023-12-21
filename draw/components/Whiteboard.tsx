@@ -1,9 +1,27 @@
 'use client';
 import React, { useState } from 'react';
 import { FaHourglass } from 'react-icons/fa';
-import { Excalidraw, exportToCanvas } from '@excalidraw/excalidraw';
 import { IconDashboard } from '@arco-design/web-react/icon';
 import { Button } from '@arco-design/web-react';
+import dynamic from 'next/dynamic';
+
+const Excalidraw = dynamic(
+    import('@excalidraw/excalidraw').then(data => {
+        return {
+            default: data.Excalidraw,
+        };
+    }),
+    { ssr: false }
+);
+
+const exportToCanvas = dynamic(
+    import('@excalidraw/excalidraw').then(data => {
+        return {
+            default: data.exportToCanvas,
+        };
+    }),
+    { ssr: false }
+);
 
 interface Props {
     doCreate: (urls: string[]) => void;

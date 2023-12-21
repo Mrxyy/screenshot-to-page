@@ -32,12 +32,10 @@ import {
 } from '@arco-design/web-react/icon';
 import { Button as AButton } from '@arco-design/web-react';
 import { Tabs as ATabs, Radio, Typography } from '@arco-design/web-react';
-import dynamic from 'next/dynamic';
-// import Whiteboard from './components/Whiteboard';
+import Whiteboard from './components/Whiteboard';
 const TabPane = ATabs.TabPane;
 const IS_OPENAI_DOWN = false;
 
-const Whiteboard = dynamic(import('./components/Whiteboard'), { ssr: false });
 function App() {
     const [appState, setAppState] = useState<AppState>(AppState.INITIAL);
     const [generatedCode, setGeneratedCode] = useState<string>('');
