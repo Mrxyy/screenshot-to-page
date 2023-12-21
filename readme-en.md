@@ -21,7 +21,7 @@
 ## Deployment 🪤
 ### Docker
 ```sh
-	docker run -p 3000:3000 jadenxiong/screenshot-to-page:0.12
+docker run -p  3000:3000 jadenxiong/screenshot-to-page
 ```
 ### Vercel
 + Click the button on the right to start deployment: ![Deploy with Vercel](https://vercel.com/button)
