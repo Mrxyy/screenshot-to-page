@@ -177,7 +177,7 @@ function PromptPanel({ settings, setSettings }: Props) {
                     <Space
                         align="start"
                         className={`custom-radio-card  custom-radio-card-checked min-w-[150px] text-center justify-center ${
-                            !node?.name ? 'bg-slate-600' : ''
+                            !node?.name ? 'bg-white' : ''
                         }`}
                     >
                         <div className="custom-radio-card-mask">
@@ -185,7 +185,7 @@ function PromptPanel({ settings, setSettings }: Props) {
                         </div>
                         <div>
                             <div className="custom-radio-card-title text-white">
-                                {node?.name || '选择'}
+                                {node?.name || '请选择'}
                             </div>
                         </div>
                     </Space>

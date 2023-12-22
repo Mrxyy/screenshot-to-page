@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { HTTP_BACKEND_URL } from '../config';
 import { toast } from 'react-hot-toast';
 import { IconLink } from '@arco-design/web-react/icon';
-import { Button, Input } from '@arco-design/web-react';
+import { Button, Input, Link } from '@arco-design/web-react';
 import { backendApi } from '@/client/api';
 
 interface Props {
@@ -51,9 +51,12 @@ export function UrlInputSection({ doCreate, screenshotOneApiKey }: Props) {
     return (
         <div className="max-w-[90%] min-w-[40%] gap-y-2 flex flex-col">
             <div className="text-gray-500 text-sm">
-                或者一个图片的链接 <IconLink style={{ color: 'var(--pc)' }} />
+                <span className="text-blue-400">或者一个图片的链接</span>{' '}
+                <IconLink style={{ color: 'var(--pc)' }} />
             </div>
             <Input
+                className="rounded-lg bg-white border-dotted border border-[var(--pc)] hover:bottom-2 hover:border-solid"
+                autoFocus
                 placeholder="输入网址"
                 onChange={val => setReferenceUrl(val)}
                 value={referenceUrl}

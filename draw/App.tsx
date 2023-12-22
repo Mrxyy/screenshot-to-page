@@ -389,16 +389,16 @@ function App() {
                             // direction="vertical"
                         >
                             <TabPane
-                                className="mt-[20px] h-[80vh]"
+                                className="mt-[20px] h-[80vh] flex flex-col justify-center"
                                 key="desktop"
                                 title={
-                                    <>
+                                    <div className="text-[var(--pc)]">
                                         <IconDesktop /> 桌面
-                                    </>
+                                    </div>
                                 }
                             >
                                 {appState === AppState.INITIAL ? (
-                                    <div className="flex flex-col justify-center items-center gap-y-10">
+                                    <div className="flex flex-col justify-center items-center gap-y-10 w-full">
                                         <ImageUpload setReferenceImages={doCreate} />
                                         <UrlInputSection
                                             doCreate={doCreate}
@@ -406,7 +406,7 @@ function App() {
                                         />
                                     </div>
                                 ) : (
-                                    <div className="flex items-start justify-between">
+                                    <div className="flex items-start justify-between w-full">
                                         {operationSession}
                                         <Preview
                                             code={generatedCode}
@@ -418,16 +418,16 @@ function App() {
                                 )}
                             </TabPane>
                             <TabPane
-                                className="mt-[20px]  h-[80vh]"
+                                className="mt-[20px]  h-[80vh] flex flex-col justify-center"
                                 key="mobile"
                                 title={
-                                    <>
+                                    <div className="text-[var(--pc)]">
                                         <IconPhone /> 移动手机
-                                    </>
+                                    </div>
                                 }
                             >
                                 {appState === AppState.INITIAL ? (
-                                    <div className="flex flex-col justify-center items-center gap-y-10">
+                                    <div className="flex flex-col justify-center items-center gap-y-10 w-full">
                                         <ImageUpload setReferenceImages={doCreate} />
                                         <UrlInputSection
                                             doCreate={doCreate}
@@ -435,7 +435,7 @@ function App() {
                                         />
                                     </div>
                                 ) : (
-                                    <div className="flex items-start justify-between">
+                                    <div className="flex items-start justify-between w-full">
                                         {operationSession}
                                         <Preview
                                             code={generatedCode}
@@ -450,9 +450,9 @@ function App() {
                                 className="mt-[20px] h-[80vh]"
                                 key="code"
                                 title={
-                                    <>
+                                    <div className="text-[var(--pc)]">
                                         <IconCode /> Code
-                                    </>
+                                    </div>
                                 }
                             >
                                 <CodeTab

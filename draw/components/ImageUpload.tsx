@@ -144,18 +144,10 @@ function ImageUpload({ setReferenceImages }: Props) {
 
     return (
         <section className="container">
-            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
             <div {...getRootProps({ style: style as any })}>
                 <input {...getInputProps()} />
-                {/* <p className="text-slate-700 text-lg">
-                    拖放截图到这里，
-                    <br />
-                    或从剪贴板粘贴，
-                    <br />
-                    或点击上传
-                </p> */}
                 <div className="flex justify-center items-center bg-gray-100 ">
-                    <div className="p-6 rounded-lg bg-white w-[300px]">
+                    <div className="p-6 rounded-lg bg-white w-[300px] shadow-lg">
                         <div className="flex flex-col items-center">
                             <IconUpload
                                 className="arco-icon"
@@ -165,7 +157,9 @@ function ImageUpload({ setReferenceImages }: Props) {
                                 拖放文件或{' '}
                                 <span className="text-blue-500 cursor-pointer">浏览</span>
                             </p>
-                            <p className="text-sm text-gray-500">支持的格式：JPEG、PNG</p>
+                            <p className="text-sm  text-[var(--pc)]">
+                                支持的格式：JPEG、PNG、base64 ...
+                            </p>
                         </div>
                     </div>
                 </div>

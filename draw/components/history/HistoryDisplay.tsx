@@ -33,7 +33,7 @@ export default function HistoryDisplay({
         <div className="w-full h-[350px] min-w-[200px]">
             <h1 className="font-bold mb-2">历史版本</h1>
             {
-                <List>
+                <List height={300}>
                     {history.map((item, index) => (
                         <List.Item
                             key={index}
