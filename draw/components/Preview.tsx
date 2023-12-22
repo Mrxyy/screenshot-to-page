@@ -31,7 +31,7 @@ function Preview({ code, device, appState, stop }: Props) {
                 <div
                     className={classNames(
                         'border-[4px] border-black rounded-[20px] shadow-lg w-full',
-                        'transform scale-[0.9] origin-top',
+                        'transform scale-[0.9] origin-content',
                         {
                             'w-full h-[700px]': device === 'desktop',
                             'w-[400px] h-[700px]': device === 'mobile',
@@ -63,7 +63,7 @@ function Preview({ code, device, appState, stop }: Props) {
                     title="Preview"
                     className={classNames(
                         'border-[4px] border-black rounded-[20px] shadow-lg',
-                        'transform scale-[0.9] origin-top',
+                        'transform scale-[0.9] origin-content',
                         {
                             'w-full h-[700px]': device === 'desktop',
                             'w-[400px] h-[700px]': device === 'mobile',

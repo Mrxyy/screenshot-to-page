@@ -3,14 +3,13 @@ import ImageUpload from './components/ImageUpload';
 import Preview from './components/Preview';
 import { CodeGenerationParams, generateCode } from './generateCode';
 import classNames from 'classnames';
-import { FaCode, FaDesktop, FaDownload, FaMobile, FaUndo, FaPencilRuler } from 'react-icons/fa';
+import { FaCode, FaDesktop, FaDownload, FaUndo, FaPencilRuler } from 'react-icons/fa';
 
 import SettingsDialog from './components/SettingsDialog';
 import { Settings, EditorTheme, AppState, GeneratedCodeConfig } from './types';
 import { usePersistedState } from './hooks/usePersistedState';
 // import { UrlInputSection } from "./components/UrlInputSection";
 import html2canvas from 'html2canvas';
-import { USER_CLOSE_WEB_SOCKET_CODE } from './constants';
 import CodeTab from './components/CodeTab';
 import OutputSettingsSection from './components/OutputSettingsSection';
 import { History } from './components/history/history_types';
@@ -34,7 +33,6 @@ import { Button as AButton } from '@arco-design/web-react';
 import { Tabs as ATabs, Radio, Typography } from '@arco-design/web-react';
 import Whiteboard from './components/Whiteboard';
 const TabPane = ATabs.TabPane;
-const IS_OPENAI_DOWN = false;
 
 function App() {
     const [appState, setAppState] = useState<AppState>(AppState.INITIAL);
@@ -406,7 +404,7 @@ function App() {
                                         />
                                     </div>
                                 ) : (
-                                    <div className="flex items-start justify-between w-full">
+                                    <div className="flex  w-full">
                                         {operationSession}
                                         <Preview
                                             code={generatedCode}
@@ -435,7 +433,7 @@ function App() {
                                         />
                                     </div>
                                 ) : (
-                                    <div className="flex items-start justify-between w-full">
+                                    <div className="flex w-full">
                                         {operationSession}
                                         <Preview
                                             code={generatedCode}

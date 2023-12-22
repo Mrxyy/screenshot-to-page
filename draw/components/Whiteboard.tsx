@@ -1,25 +1,35 @@
 'use client';
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { FaHourglass } from 'react-icons/fa';
 import { IconDashboard } from '@arco-design/web-react/icon';
 import { Button } from '@arco-design/web-react';
 import dynamic from 'next/dynamic';
 
 const Excalidraw = dynamic(
-    import('@excalidraw/excalidraw').then(data => {
-        return {
-            default: data.Excalidraw,
-        };
-    }),
+    async () => {
+        if (window) {
+            return Fragment;
+        }
+        return import('@excalidraw/excalidraw').then(data => {
+            return {
+                default: data.Excalidraw,
+            };
+        });
+    },
     { ssr: false }
 );
 
 const exportToCanvas = dynamic(
-    import('@excalidraw/excalidraw').then(data => {
-        return {
-            default: data.exportToCanvas,
-        };
-    }),
+    (async () => {
+        if (window) {
+            return null;
+        }
+        return import('@excalidraw/excalidraw').then(data => {
+            return {
+                default: data.exportToCanvas,
+            };
+        });
+    }) as any,
     { ssr: false }
 );
 
