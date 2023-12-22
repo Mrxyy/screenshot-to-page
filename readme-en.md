@@ -3,11 +3,12 @@
 > **Turn screenshots, image links, or sketches into code with PT-4 Vision and convert them into web pages, with support for one-click deployment to the cloud ☁️**. [Online address](https://screenshot-to-page.vercel.app/)
 
 + PC
-<img src="https://cdn.glitch.global/fd139a45-4a65-41b6-9634-41617ab20cdc/586ef762-ee50-429e-9aa2-e2d3ab65be7e.image.png?v=1703213201822" width="50%" />
+
+<img src="https://cdn.glitch.global/fd139a45-4a65-41b6-9634-41617ab20cdc/586ef762-ee50-429e-9aa2-e2d3ab65be7e.image.png?v=1703213201822" width="80%" />
 
 + Mobile
-  
-<img src="https://cdn.glitch.global/fd139a45-4a65-41b6-9634-41617ab20cdc/267ca2d1-b7e6-42ab-8713-7c22fd829747.image.png?v=1703214760406" width="20%" height="400"/><img src="https://cdn.glitch.global/fd139a45-4a65-41b6-9634-41617ab20cdc/27148080-fb45-420d-835b-0f5edf978a40.image.png?v=1703214823811" width="20%" height="400" /> 
+
+<img src="https://cdn.glitch.global/fd139a45-4a65-41b6-9634-41617ab20cdc/267ca2d1-b7e6-42ab-8713-7c22fd829747.image.png?v=1703214760406" width="30%" align="center"/><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="https://cdn.glitch.global/fd139a45-4a65-41b6-9634-41617ab20cdc/27148080-fb45-420d-835b-0f5edf978a40.image.png?v=1703214823811" width="30%" align="center"/>
 
 ## Milestones 🌊
 - Completely restructured using Next.js, supporting simple deployment on multiple cloud platforms.
