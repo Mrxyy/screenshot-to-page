@@ -87,7 +87,11 @@ function Whiteboard({ doCreate, closeWhiteboardDialog }: Props) {
     );
 }
 
-export default fetchDomPageWrapper(Whiteboard, import('@excalidraw/excalidraw'), data => {
-    exportToCanvas = data.exportToCanvas;
-    Excalidraw = data.Excalidraw;
-});
+export default fetchDomPageWrapper(
+    Whiteboard,
+    () => import('@excalidraw/excalidraw'),
+    data => {
+        exportToCanvas = data.exportToCanvas;
+        Excalidraw = data.Excalidraw;
+    }
+);
