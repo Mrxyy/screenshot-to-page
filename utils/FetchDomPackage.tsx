@@ -1,4 +1,3 @@
-import { Spin } from '@arco-design/web-react';
 import { FunctionComponent, useEffect, useState } from 'react';
 
 export default function fetchDomPageWrapper<T, P>(
@@ -17,6 +16,6 @@ export default function fetchDomPageWrapper<T, P>(
                 });
             }
         }, []);
-        return flag ? <Component {...props} /> : <Spin dot />;
+        return flag ? <Component {...props} /> : null;
     };
 }
