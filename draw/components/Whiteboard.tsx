@@ -1,37 +1,16 @@
 'use client';
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import { FaHourglass } from 'react-icons/fa';
 import { IconDashboard } from '@arco-design/web-react/icon';
 import { Button } from '@arco-design/web-react';
-import dynamic from 'next/dynamic';
+import fetchDomPageWrapper from '@/utils/FetchDomPackage';
+import type {
+    Excalidraw as ExcalidrawTypes,
+    exportToCanvas as exportToCanvasTypes,
+} from '@excalidraw/excalidraw';
 
-const Excalidraw = dynamic(
-    async () => {
-        if (window) {
-            return Fragment;
-        }
-        return import('@excalidraw/excalidraw').then(data => {
-            return {
-                default: data.Excalidraw,
-            };
-        });
-    },
-    { ssr: false }
-);
-
-const exportToCanvas = dynamic(
-    (async () => {
-        if (window) {
-            return null;
-        }
-        return import('@excalidraw/excalidraw').then(data => {
-            return {
-                default: data.exportToCanvas,
-            };
-        });
-    }) as any,
-    { ssr: false }
-);
+let Excalidraw: typeof ExcalidrawTypes;
+let exportToCanvas: typeof exportToCanvasTypes;
 
 interface Props {
     doCreate: (urls: string[]) => void;
@@ -108,4 +87,7 @@ function Whiteboard({ doCreate, closeWhiteboardDialog }: Props) {
     );
 }
 
-export default Whiteboard;
+export default fetchDomPageWrapper(Whiteboard, import('@excalidraw/excalidraw'), data => {
+    exportToCanvas = data.exportToCanvas;
+    Excalidraw = data.Excalidraw;
+});
