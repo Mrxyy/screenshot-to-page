@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import { toast } from 'react-hot-toast';
 import { Avatar, Card, Form, Modal, Popover, Space, Input } from '@arco-design/web-react';
 import { IconPlus } from '@arco-design/web-react/icon';
+import { useTranslation } from 'react-i18next';
 
 const Item = Form.Item;
 interface Props {
@@ -152,13 +153,14 @@ function PromptPanel({ settings, setSettings }: Props) {
         return { listNode, node };
     }, [selectedId, settings, promptList]);
 
+    const { t } = useTranslation('translations');
     return (
         <div className="relative">
             <div>
                 <Popover
                     className="w-[400px]"
                     position="right"
-                    title="提示词"
+                    title={t('Prompt word')}
                     content={
                         <div>
                             {listNode}
@@ -169,7 +171,7 @@ function PromptPanel({ settings, setSettings }: Props) {
                                     setShowDialog(true);
                                 }}
                             >
-                                <IconPlus /> 添加
+                                <IconPlus /> {t('Add')}
                             </div>
                         </div>
                     }
@@ -185,7 +187,7 @@ function PromptPanel({ settings, setSettings }: Props) {
                         </div>
                         <div>
                             <div className="custom-radio-card-title text-white">
-                                {node?.name || '请选择'}
+                                {node?.name || t('Please select')}
                             </div>
                         </div>
                     </Space>

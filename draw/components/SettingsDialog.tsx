@@ -5,6 +5,7 @@ import { Settings } from '../types';
 import { IS_RUNNING_ON_CLOUD } from '../config';
 
 import { Button, Form, Input, Modal, Switch } from '@arco-design/web-react';
+import { useTranslation } from 'react-i18next';
 const FormItem = Form.Item;
 interface Props {
     settings: Settings;
@@ -13,6 +14,7 @@ interface Props {
 
 function SettingsDialog({ settings, setSettings }: Props) {
     const [visible, setVisible] = React.useState(false);
+    const { t } = useTranslation('translations');
     return (
         <>
             <Button
@@ -23,8 +25,8 @@ function SettingsDialog({ settings, setSettings }: Props) {
             />
 
             <Modal
-                title={'设置'}
-                okText={'保存'}
+                title={t('Settings')}
+                okText={t('Save')}
                 visible={visible}
                 onOk={() => setVisible(false)}
                 onCancel={() => setVisible(false)}
@@ -34,7 +36,9 @@ function SettingsDialog({ settings, setSettings }: Props) {
                 <Form layout="vertical">
                     <FormItem
                         label="API key"
-                        extra="仅存储在您的浏览器中。不会存储在服务器上。覆盖您的.env配置。"
+                        extra={t(
+                            'Only stored in your browser. Will not be stored on the server. Override your .env configuration.'
+                        )}
                     >
                         <Input
                             id="openai-api-key"
@@ -53,11 +57,15 @@ function SettingsDialog({ settings, setSettings }: Props) {
                         <>
                             <FormItem
                                 label="Base URL"
-                                extra="如果您不想使用默认的URL，请替换为代理URL。(可选)"
+                                extra={t(
+                                    'If you dont want to use the default URL, replace it with the proxy URL. (optional)'
+                                )}
                             >
                                 <Input
                                     id="openai-base-url"
-                                    placeholder="如果您不想使用默认的URL，请替换为代理URL。"
+                                    placeholder={t(
+                                        'If you dont want to use the default URL, replace it with the proxy URL.'
+                                    )}
                                     value={settings.openAiBaseURL || ''}
                                     onChange={e =>
                                         setSettings(s => ({
@@ -70,7 +78,7 @@ function SettingsDialog({ settings, setSettings }: Props) {
                         </>
                     )}
 
-                    <FormItem label="模拟 AI 响应" layout="inline">
+                    <FormItem label={t('Simulate AI responses')} layout="inline">
                         <Switch
                             size="small"
                             id="image-generation"
