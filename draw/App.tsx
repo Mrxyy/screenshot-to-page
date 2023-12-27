@@ -32,6 +32,7 @@ import {
 import { Button as AButton } from '@arco-design/web-react';
 import { Tabs as ATabs, Radio, Typography } from '@arco-design/web-react';
 import Whiteboard from './components/Whiteboard';
+import { useTranslation } from 'react-i18next';
 const TabPane = ATabs.TabPane;
 
 function App() {
@@ -241,6 +242,7 @@ function App() {
         setUpdateInstruction('');
     }
     const [visible, setVisible] = React.useState(false);
+    const { t } = useTranslation('translations');
     const operationSession = (
         <div>
             <div className="grid col-span-1 gap-1 ml-[20px]">
@@ -256,7 +258,7 @@ function App() {
                 <Popover
                     className="w-[500px]"
                     content={
-                        <List header="日志">
+                        <List header={t('Log')}>
                             {executionConsole.length ? (
                                 executionConsole.map((line, index) => (
                                     <List.Item
@@ -302,13 +304,13 @@ function App() {
                         <div>
                             <div className="grid w-full gap-2">
                                 <Input.TextArea
-                                    placeholder="告诉AI你想修改什么..."
+                                    placeholder={t('Tell Ai what do you want to modify...')}
                                     onChange={value => setUpdateInstruction(value)}
                                     value={updateInstruction}
                                 />
                                 <div className="flex justify-between items-center gap-x-2">
                                     <div className="font-500 text-xs text-slate-700 dark:text-white">
-                                        包含当前版本的截图?
+                                        {t('Include screenshots of the current version?')}
                                     </div>
                                     <Switch
                                         checked={shouldIncludeResultImage}
@@ -319,7 +321,7 @@ function App() {
                                     onClick={doUpdate}
                                     className="dark:text-white dark:bg-gray-700"
                                 >
-                                    更新
+                                    {t('Renew')}
                                 </AButton>
                             </div>
                         </div>
@@ -331,6 +333,7 @@ function App() {
             </div>
         </div>
     );
+
     return (
         <div className="mt-2 dark:bg-black dark:text-white">
             <main className="py-2">
@@ -391,7 +394,7 @@ function App() {
                                 key="desktop"
                                 title={
                                     <div className="text-[var(--pc)]">
-                                        <IconDesktop /> 桌面
+                                        <IconDesktop /> {t('Desk')}
                                     </div>
                                 }
                             >
@@ -420,7 +423,7 @@ function App() {
                                 key="mobile"
                                 title={
                                     <div className="text-[var(--pc)]">
-                                        <IconPhone /> 移动手机
+                                        <IconPhone /> {t('Mobile Phone')}
                                     </div>
                                 }
                             >
@@ -449,7 +452,7 @@ function App() {
                                 key="code"
                                 title={
                                     <div className="text-[var(--pc)]">
-                                        <IconCode /> Code
+                                        <IconCode /> {t('Code')}
                                     </div>
                                 }
                             >
