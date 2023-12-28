@@ -2,6 +2,7 @@ import { History, HistoryItemType } from './history_types';
 import toast from 'react-hot-toast';
 import classNames from 'classnames';
 import { Badge, List, Popover } from '@arco-design/web-react';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
     history: History;
@@ -29,9 +30,10 @@ export default function HistoryDisplay({
     revertToVersion,
     shouldDisableReverts,
 }: Props) {
+    const { t } = useTranslation('translations');
     return history.length === 0 ? null : (
         <div className="w-full h-[350px] min-w-[200px]">
-            <h1 className="font-bold mb-2">历史版本</h1>
+            <h1 className="font-bold mb-2">{t('Historic version')}</h1>
             {
                 <List height={300}>
                     {history.map((item, index) => (
@@ -64,7 +66,9 @@ export default function HistoryDisplay({
                                 <div className="flex items-center justify-between w-full">
                                     <div className="flex gap-x-1 truncate justify-start w-full ">
                                         <h2 className="text-sm truncate">
-                                            {item.type === 'ai_edit' ? item.inputs.prompt : '版本'}
+                                            {item.type === 'ai_edit'
+                                                ? item.inputs.prompt
+                                                : t('Version')}
                                         </h2>
                                         {/* <h2 className="text-sm">{displayHistoryItemType(item.type)}</h2> */}
                                         {item.parentIndex !== null &&

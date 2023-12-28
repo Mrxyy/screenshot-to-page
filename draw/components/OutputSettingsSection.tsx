@@ -2,6 +2,7 @@ import { GeneratedCodeConfig } from '../types';
 import { Popover, Radio, Space } from '@arco-design/web-react';
 import { map } from 'lodash';
 import { ReactElement } from 'react';
+import { useTranslation } from 'react-i18next';
 
 function generateDisplayComponent(config: GeneratedCodeConfig) {
     switch (config) {
@@ -76,13 +77,14 @@ function OutputSettingsSection({
     addThemeBtn,
 }: Props) {
     // const [show, setShow] = useState(false);
+    const { t } = useTranslation('translations');
     return (
         <div className="flex flex-col gap-y-2 justify-between text-sm">
             <div className="flex">
-                <span className="font-bold whitespace-nowrap mr-4"> 主题风格 </span>
+                <span className="font-bold whitespace-nowrap mr-4">{t('Theme style')}</span>
                 <Popover
                     position="right"
-                    title="主题风格"
+                    title={t('Theme style')}
                     content={
                         <div className="my-[10px]">
                             <Radio.Group
@@ -138,7 +140,7 @@ function OutputSettingsSection({
                         </div>
                     </Space>
                 </Popover>
-                <span className="font-bold whitespace-nowrap mx-4"> 提示词 </span>
+                <span className="font-bold whitespace-nowrap mx-4"> {t('Prompt word')}</span>
                 {addThemeBtn}
             </div>
         </div>

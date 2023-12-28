@@ -1,6 +1,7 @@
 import '@arco-design/web-react/dist/css/arco.css';
 import '../styles/globals.sass';
 import '../styles/global.css';
+import '../next-i18next.config';
 
 import { ConfigProvider } from '@arco-design/web-react';
 import { useState } from 'react';

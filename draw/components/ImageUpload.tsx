@@ -3,6 +3,7 @@ import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { useDropzone } from 'react-dropzone';
 // import { PromptImage } from "../../../types";
 import { toast } from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
 
 const baseStyle = {
     flex: 1,
@@ -141,7 +142,7 @@ function ImageUpload({ setReferenceImages }: Props) {
         }),
         [isFocused, isDragAccept, isDragReject]
     );
-
+    const { t } = useTranslation('translations');
     return (
         <section className="container">
             <div {...getRootProps({ style: style as any })}>
@@ -154,11 +155,11 @@ function ImageUpload({ setReferenceImages }: Props) {
                                 style={{ fontSize: '50px', color: 'var(--pc)' }}
                             />
                             <p className="text-lg font-medium my-4">
-                                拖放文件或{' '}
-                                <span className="text-blue-500 cursor-pointer">浏览</span>
+                                {t('Drag and drop files or')}
+                                <span className="text-blue-500 cursor-pointer">{t(' Browse')}</span>
                             </p>
                             <p className="text-sm  text-[var(--pc)]">
-                                支持的格式：JPEG、PNG、base64 ...
+                                {t('Supported formats')}：JPEG、PNG、base64 ...
                             </p>
                         </div>
                     </div>
