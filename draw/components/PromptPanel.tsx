@@ -153,7 +153,7 @@ function PromptPanel({ settings, setSettings }: Props) {
         return { listNode, node };
     }, [selectedId, settings, promptList]);
 
-    const { t } = useTranslation('translations');
+    const { t } = useTranslation('draw');
     return (
         <div className="relative">
             <div>

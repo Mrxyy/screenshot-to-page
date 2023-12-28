@@ -30,7 +30,7 @@ export default function HistoryDisplay({
     revertToVersion,
     shouldDisableReverts,
 }: Props) {
-    const { t } = useTranslation('translations');
+    const { t } = useTranslation('draw');
     return history.length === 0 ? null : (
         <div className="w-full h-[350px] min-w-[200px]">
             <h1 className="font-bold mb-2">{t('Historic version')}</h1>

@@ -142,7 +142,7 @@ function ImageUpload({ setReferenceImages }: Props) {
         }),
         [isFocused, isDragAccept, isDragReject]
     );
-    const { t } = useTranslation('translations');
+    const { t } = useTranslation('draw');
     return (
         <section className="container">
             <div {...getRootProps({ style: style as any })}>

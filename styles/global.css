@@ -28,10 +28,6 @@ body {
     --pc: rgb(var(--primary-6));
 }
 
-body {
-    background: rgb(144 252 255 /10%);
-}
-
 body.fs {
     --primary-1: 255, 255, 255;
     --primary-2: 255, 247, 230;
@@ -409,7 +405,7 @@ body[arco-theme='dark'] {
 
 @layer base {
     :root {
-        --background: 0 0% 100%;
+        --background: 182, 100%, 78%, 0.102
         --foreground: 222.2 84% 4.9%;
 
         --card: 0 0% 100%;
@@ -440,10 +436,6 @@ body[arco-theme='dark'] {
         --radius: 0.5rem;
     }
 
-    body.dark {
-        background-color: black;
-    }
-
     div[role='presentation'].dark {
         background-color: #09090b !important;
     }
@@ -452,8 +444,8 @@ body[arco-theme='dark'] {
         background-color: white !important;
     }
 
-    .dark {
-        --background: 222.2 0% 0%;
+    body[arco-theme='dark'] {
+        --background: 2, 1.5000000000000028%, 2.50980392156863%;
         --foreground: 210 40% 98%;
 
         --card: 222.2 84% 4.9%;
@@ -480,6 +472,8 @@ body[arco-theme='dark'] {
         --border: 217.2 32.6% 17.5%;
         --input: 217.2 32.6% 17.5%;
         --ring: 212.7 26.8% 83.9%;
+        --color-neutral-3:rgba(112, 110, 110, 0.711);
+        --color-bg-2: rgb(255 255 255/0.4);
     }
 }
 

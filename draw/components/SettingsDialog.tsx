@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { FaCog } from 'react-icons/fa';
 import { Settings } from '../types';
 
@@ -6,15 +6,17 @@ import { IS_RUNNING_ON_CLOUD } from '../config';
 
 import { Button, Form, Input, Modal, Switch } from '@arco-design/web-react';
 import { useTranslation } from 'react-i18next';
+import { IconMoonFill, IconSunFill } from '@arco-design/web-react/icon';
 const FormItem = Form.Item;
 interface Props {
     settings: Settings;
     setSettings: React.Dispatch<React.SetStateAction<Settings>>;
+    Config?: FunctionComponent;
 }
 
-function SettingsDialog({ settings, setSettings }: Props) {
+function SettingsDialog({ settings, setSettings, Config }: Props) {
     const [visible, setVisible] = React.useState(false);
-    const { t } = useTranslation('translations');
+    const { t } = useTranslation('draw');
     return (
         <>
             <Button
@@ -91,6 +93,7 @@ function SettingsDialog({ settings, setSettings }: Props) {
                             }
                         />
                     </FormItem>
+                    {Config ? <Config /> : null}
                 </Form>
             </Modal>
         </>

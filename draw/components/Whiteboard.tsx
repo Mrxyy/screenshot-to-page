@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaHourglass } from 'react-icons/fa';
 import { IconDashboard } from '@arco-design/web-react/icon';
 import { Button } from '@arco-design/web-react';
@@ -23,6 +23,11 @@ const initialData = {
 
 function Whiteboard({ doCreate, closeWhiteboardDialog }: Props) {
     const [excalidrawAPI, setExcalidrawAPI] = useState(null);
+    const [theme, setTheme] = useState('light');
+    useEffect(() => {
+        setTheme(localStorage.getItem('theme')!);
+    }, []);
+
     // const [canvasUrl, setCanvasUrl] = useState("");
 
     const exportImg = async () => {
@@ -74,6 +79,7 @@ function Whiteboard({ doCreate, closeWhiteboardDialog }: Props) {
                 )}
                 // @ts-ignore
                 excalidrawAPI={api => setExcalidrawAPI(api)}
+                theme={theme}
             >
                 {/* <MainMenu>
               <MainMenu.Item onSelect={() => {

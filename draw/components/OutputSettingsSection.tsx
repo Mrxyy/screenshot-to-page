@@ -77,7 +77,7 @@ function OutputSettingsSection({
     addThemeBtn,
 }: Props) {
     // const [show, setShow] = useState(false);
-    const { t } = useTranslation('translations');
+    const { t } = useTranslation('draw');
     return (
         <div className="flex flex-col gap-y-2 justify-between text-sm">
             <div className="flex">

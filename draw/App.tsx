@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { FunctionComponent, useEffect, useRef, useState } from 'react';
 import ImageUpload from './components/ImageUpload';
 import Preview from './components/Preview';
 import { CodeGenerationParams, generateCode } from './generateCode';
@@ -35,7 +35,7 @@ import Whiteboard from './components/Whiteboard';
 import { useTranslation } from 'react-i18next';
 const TabPane = ATabs.TabPane;
 
-function App() {
+function App({ Config }: { Config?: FunctionComponent }) {
     const [appState, setAppState] = useState<AppState>(AppState.INITIAL);
     const [generatedCode, setGeneratedCode] = useState<string>('');
 
@@ -242,7 +242,7 @@ function App() {
         setUpdateInstruction('');
     }
     const [visible, setVisible] = React.useState(false);
-    const { t } = useTranslation('translations');
+    const { t } = useTranslation('draw');
     const operationSession = (
         <div>
             <div className="grid col-span-1 gap-1 ml-[20px]">
@@ -380,7 +380,11 @@ function App() {
                                     onClick={() => setShowWhiteboardDialog(true)}
                                 />
 
-                                <SettingsDialog settings={settings} setSettings={setSettings} />
+                                <SettingsDialog
+                                    settings={settings}
+                                    setSettings={setSettings}
+                                    Config={Config}
+                                />
                             </div>
                         </div>
                         <ATabs

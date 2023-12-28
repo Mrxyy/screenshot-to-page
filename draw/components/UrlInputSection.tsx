@@ -48,7 +48,7 @@ export function UrlInputSection({ doCreate, screenshotOneApiKey }: Props) {
             }
         }
     }
-    const { t } = useTranslation('translations');
+    const { t } = useTranslation('draw');
     return (
         <div className="max-w-[90%] min-w-[40%] gap-y-2 flex flex-col">
             <div className="text-gray-500 text-sm">
