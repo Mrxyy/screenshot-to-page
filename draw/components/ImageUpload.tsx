@@ -146,8 +146,8 @@ function ImageUpload({ setReferenceImages }: Props) {
         <section className="container">
             <div {...getRootProps({ style: style as any })}>
                 <input {...getInputProps()} />
-                <div className="flex justify-center items-center bg-gray-100 ">
-                    <div className="p-6 rounded-lg bg-white w-[300px] shadow-lg">
+                <div className="flex justify-center items-center bg-gray-100 rounded-lg w-[300px] shadow-lg ">
+                    <div className="p-6">
                         <div className="flex flex-col items-center">
                             <IconUpload
                                 className="arco-icon"

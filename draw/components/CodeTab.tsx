@@ -4,8 +4,8 @@ import { useCallback } from 'react';
 import toast from 'react-hot-toast';
 import Editor from '@monaco-editor/react';
 import React from 'react';
-import { IconCodepen, IconCopy } from '@arco-design/web-react/icon';
 import { Button } from '@arco-design/web-react';
+import { IconCodepen, IconCopy } from '@arco-design/web-react/icon';
 
 interface Props {
     code: string;
@@ -56,43 +56,51 @@ function CodeTab({ code, setCode, settings }: Props) {
     }, [code]);
 
     return (
-        <div className="px-[30px]">
-            <div className="flex justify-end my-[10px] mb-2 box-border">
-                <Button
-                    type="text"
-                    icon={
-                        <IconCopy
-                            onClick={copyCode}
-                            style={{
-                                fontSize: 20,
-                            }}
-                        />
-                    }
-                    iconOnly
-                />
+        <div className="px-[30px] h-full flex">
+            <div className="w-full">
+                <div className="flex justify-start my-[10px] mt-2 mb-[0] box-border  bg-[rgba(var(--primary-1),0.8)] rounded-t p-[5px]">
+                    <Button
+                        type="default"
+                        size="mini"
+                        className="mx-[10px] p-[10px]"
+                        icon={
+                            <IconCopy
+                                onClick={copyCode}
+                                style={{
+                                    fontSize: 20,
+                                }}
+                            />
+                        }
+                        iconOnly
+                    />
 
-                <Button
-                    type="text"
-                    icon={
-                        <IconCodepen
-                            onClick={doOpenInCodepenio}
-                            style={{
-                                fontSize: 20,
-                            }}
-                        />
-                    }
-                    iconOnly
+                    <Button
+                        type="default"
+                        className="p-[10px]"
+                        size="mini"
+                        icon={
+                            <IconCodepen
+                                onClick={doOpenInCodepenio}
+                                style={{
+                                    fontSize: 20,
+                                }}
+                            />
+                        }
+                        iconOnly
+                    />
+                </div>
+                <Editor
+                    className={`!mt-0 border border-[rgba(var(--primary-1),0.8)]`}
+                    height="70vh"
+                    defaultLanguage="html"
+                    defaultValue="// some comment"
+                    value={code}
+                    onChange={value => {
+                        setCode(value as string);
+                    }}
                 />
+                <div className="flex justify-end mt-[0] box-border h-[10px]   bg-[rgba(var(--primary-1),0.8)] rounded-b translate-y-[-2px]"></div>
             </div>
-            <Editor
-                height="75vh"
-                defaultLanguage="html"
-                defaultValue="// some comment"
-                value={code}
-                onChange={value => {
-                    setCode(value as string);
-                }}
-            />
         </div>
     );
 }
