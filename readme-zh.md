@@ -11,19 +11,24 @@
 <img src="https://cdn.glitch.global/fd139a45-4a65-41b6-9634-41617ab20cdc/267ca2d1-b7e6-42ab-8713-7c22fd829747.image.png?v=1703214760406" width="30%" align="center"/><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="https://cdn.glitch.global/fd139a45-4a65-41b6-9634-41617ab20cdc/27148080-fb45-420d-835b-0f5edf978a40.image.png?v=1703214823811" width="30%" align="center"/>
 
 ## 里程碑 🌊
-- 使用nexjs进行了完全的重构，支持多个云平台简单部署。
 
-- 2023/12/28 📅: 增加多主题和支持i18n。
++ 使用nexjs进行了完全的重构，支持多个云平台简单部署。
+
++ 2023/12/28 📅: 增加多主题和支持i18n。
+
++ 2023/12/31 📅: 支持谷歌Gemini（免费）。
 
 ## 区别 🏄🏿‍♂️
 + 更加适合js/ts技术栈开发人员快速上手。
 + 免费的无服务器的云平台部署。
 + 支持excalidraw绘制。
++ 支持谷歌Gemini（免费）。
 
 ## 计划 🌄
 + 实现代码沙箱，支持现代化、工程化的编码方式 （很快就会到来啦，代码基本已经完成）。
 + 实现局部修改更新，类似V0。
 + ~~i18n~~
++ ~~支持谷歌Gemini~~
 
 ## 部署 🪤
 ### docker 

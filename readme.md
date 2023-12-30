@@ -11,19 +11,24 @@
 <img src="https://cdn.glitch.global/fd139a45-4a65-41b6-9634-41617ab20cdc/267ca2d1-b7e6-42ab-8713-7c22fd829747.image.png?v=1703214760406" width="30%" align="center"/><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="https://cdn.glitch.global/fd139a45-4a65-41b6-9634-41617ab20cdc/27148080-fb45-420d-835b-0f5edf978a40.image.png?v=1703214823811" width="30%" align="center"/>
 
 ## Milestones 🌊
-- Completely restructured using Next.js, supporting simple deployment on multiple cloud platforms.
-- 2023/12/28 📅: Added support for multiple themes and i18n.
+
++ Completely restructured using Next.js, supporting simple deployment on multiple cloud platforms.
+
++ 2023/12/28 📅: Added support for multiple themes and i18n.
+
++ 2023/12/31 📅: support googol Gemini (free).
 	
 ## Distinctions 🏄🏿‍♂️
 + Better suited for developers familiar with the js/ts tech stack to get started quickly.
 + Free serverless cloud platform deployment.
 + Support for Excalidraw sketches.
++ support googol Gemini (free).
 
 ## Plans 🌄
 + Implement a code sandbox to support modern, engineered coding practices (coming very soon, the codebase is almost complete).
 + Implement partial update features, similar to V0.
-+ ~~i18n
-+ support googol Gemini.
++ ~~i18n~~
++ ~~support googol Gemini~~.
 
 ## Deployment 🪤
 ### Docker
