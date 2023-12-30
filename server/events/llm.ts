@@ -1,4 +1,3 @@
-import { forEach } from 'lodash';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
 // 功能函数，用于从base64数据URL中提取MIME类型和纯base64数据部分
@@ -139,12 +138,11 @@ export async function streamingOpenAIResponses(
             .trim()
             .split(/\n\n/)
             .map(v => v.replace(/^data:/, '').trim());
-        forEach(resArr, item => {
+        resArr.forEach(item => {
             try {
                 const chunk = JSON.parse(perText + item);
                 const content = chunk.choices[0]?.delta?.content || '';
                 full_response += content;
-                console.log(content);
                 callback(content);
                 perText = '';
             } catch (e) {
