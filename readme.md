@@ -18,19 +18,19 @@
 
 + 2023/12/28 📅: Added support for multiple themes and i18n.
 
-+ 2023/12/31 📅: support googol Gemini (free).
++ 2023/12/31 📅: support google Gemini (free).
 	
 ## Distinctions 🏄🏿‍♂️
 + Better suited for developers familiar with the js/ts tech stack to get started quickly.
 + Free serverless cloud platform deployment.
 + Support for Excalidraw sketches.
-+ Support googol Gemini (free).
++ Support google Gemini (free).
 
 ## Plans 🌄
 + Implement a code sandbox to support modern, engineered coding practices (coming very soon, the codebase is almost complete).
 + Implement partial update features, similar to V0.
 + ~~I18n~~
-+ ~~Support googol Gemini~~.
++ ~~Support google Gemini~~.
 
 ## Deployment 🪤
 ### Docker
