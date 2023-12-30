@@ -45,3 +45,4 @@ public/service-worker.js
 xflow-docs
 !draw-app/draw
 public/service-worker.js
+server/events/google

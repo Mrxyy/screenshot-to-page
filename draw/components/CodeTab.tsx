@@ -14,7 +14,6 @@ interface Props {
 }
 
 function CodeTab({ code, setCode, settings }: Props) {
-    console.log(settings);
     const copyCode = useCallback(() => {
         copy(code);
         toast.success('Copied to clipboard');

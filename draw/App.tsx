@@ -59,6 +59,7 @@ function App({ Config }: { Config?: FunctionComponent }) {
             accessCode: null,
             mockAiResponse: false,
             promptCode: '',
+            llm: 'Gemini',
         },
         'setting'
     );

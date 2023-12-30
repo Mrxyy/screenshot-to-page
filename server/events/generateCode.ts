@@ -17,6 +17,7 @@ export interface IGenerateCodeParams {
     promptCode: string;
     mockAiResponse?: boolean;
     history: any[];
+    llm: string;
 }
 const encoder = new TextEncoder();
 export async function streamGenerateCode(
@@ -92,6 +93,7 @@ export async function streamGenerateCode(
                 {
                     openAiApiKey: params.openAiApiKey || process.env.NEXT_PUBLIC_OPEN_AI_API_KEY,
                     openAiBaseURL: params.openAiBaseURL || process.env.NEXT_PUBLIC_BACKEND_URL,
+                    llm: params.llm,
                 }
             );
         } catch (e) {

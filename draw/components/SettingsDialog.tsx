@@ -4,16 +4,26 @@ import { Settings } from '../types';
 
 import { IS_RUNNING_ON_CLOUD } from '../config';
 
-import { Button, Form, Input, Modal, Switch } from '@arco-design/web-react';
+import { Button, Form, Image, Input, Modal, Radio, Switch } from '@arco-design/web-react';
 import { useTranslation } from 'react-i18next';
 import { IconMoonFill, IconSunFill } from '@arco-design/web-react/icon';
+import { map } from 'lodash';
 const FormItem = Form.Item;
+const RadioGroup = Radio.Group;
 interface Props {
     settings: Settings;
     setSettings: React.Dispatch<React.SetStateAction<Settings>>;
     Config?: FunctionComponent;
 }
 
+const llm = {
+    Gemini: {
+        title: 'Gemini',
+    },
+    OpenAi: {
+        title: 'OpenAi',
+    },
+};
 function SettingsDialog({ settings, setSettings, Config }: Props) {
     const [visible, setVisible] = React.useState(false);
     const { t } = useTranslation('draw');
@@ -37,6 +47,36 @@ function SettingsDialog({ settings, setSettings, Config }: Props) {
             >
                 <Form layout="vertical">
                     <FormItem
+                        label={t('Select model')}
+                        extra={
+                            settings.llm === 'Gemini' ? (
+                                <span className="text-[var(--pc)]">
+                                    {t(
+                                        "If you haven't applied for Gemini, the Gemini API key is not required."
+                                    )}
+                                </span>
+                            ) : null
+                        }
+                    >
+                        <RadioGroup
+                            value={settings.llm}
+                            onChange={e =>
+                                setSettings(s => ({
+                                    ...s,
+                                    llm: e,
+                                }))
+                            }
+                        >
+                            {map(llm, ({ title }) => {
+                                return (
+                                    <Radio value={title} key={title}>
+                                        {title}
+                                    </Radio>
+                                );
+                            })}
+                        </RadioGroup>
+                    </FormItem>
+                    <FormItem
                         label="API key"
                         extra={t(
                             'Only stored in your browser. Will not be stored on the server. Override your .env configuration.'
@@ -54,8 +94,8 @@ function SettingsDialog({ settings, setSettings, Config }: Props) {
                             }
                         />
                     </FormItem>
-
-                    {!IS_RUNNING_ON_CLOUD && (
+                    {settings.llm}
+                    {!IS_RUNNING_ON_CLOUD && settings.llm !== 'Gemini' && (
                         <>
                             <FormItem
                                 label="Base URL"
