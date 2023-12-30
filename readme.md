@@ -22,7 +22,8 @@
 ## Plans 🌄
 + Implement a code sandbox to support modern, engineered coding practices (coming very soon, the codebase is almost complete).
 + Implement partial update features, similar to V0.
-+ ~~i18n~~
++ ~~i18n
++ support googol Gemini.
 
 ## Deployment 🪤
 ### Docker
