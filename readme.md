@@ -22,13 +22,13 @@
 + Better suited for developers familiar with the js/ts tech stack to get started quickly.
 + Free serverless cloud platform deployment.
 + Support for Excalidraw sketches.
-+ support googol Gemini (free).
++ Support googol Gemini (free).
 
 ## Plans 🌄
 + Implement a code sandbox to support modern, engineered coding practices (coming very soon, the codebase is almost complete).
 + Implement partial update features, similar to V0.
-+ ~~i18n~~
-+ ~~support googol Gemini~~.
++ ~~I18n~~
++ ~~Support googol Gemini~~.
 
 ## Deployment 🪤
 ### Docker
