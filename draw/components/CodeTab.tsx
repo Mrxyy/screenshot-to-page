@@ -6,6 +6,7 @@ import Editor from '@monaco-editor/react';
 import React from 'react';
 import { Button } from '@arco-design/web-react';
 import { IconCodepen, IconCopy } from '@arco-design/web-react/icon';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
     code: string;
@@ -14,9 +15,10 @@ interface Props {
 }
 
 function CodeTab({ code, setCode, settings }: Props) {
+    const { t } = useTranslation('draw');
     const copyCode = useCallback(() => {
         copy(code);
-        toast.success('Copied to clipboard');
+        toast.success(t('Copied to clipboard'));
     }, [code]);
 
     const doOpenInCodepenio = useCallback(async () => {

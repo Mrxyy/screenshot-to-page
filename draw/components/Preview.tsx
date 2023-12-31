@@ -5,6 +5,7 @@ import { Button, Spin } from '@arco-design/web-react';
 import CodePreview from './CodePreview';
 import { AppState } from '../types';
 import { IconLoading } from '@arco-design/web-react/icon';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
     code: string;
@@ -16,6 +17,7 @@ interface Props {
 function Preview({ code, device, appState, stop }: Props) {
     const throttledCode = useThrottle(code, 200);
     const iframeRef = useRef<HTMLIFrameElement | null>(null);
+    const { t } = useTranslation('draw');
 
     const iframe: any = useMemo(() => {
         return (
@@ -72,7 +74,7 @@ function Preview({ code, device, appState, stop }: Props) {
                             className="w-[200px] dark:text-white dark:bg-gray-700 h-[50px] hover:shadow-lg mt-[30px]"
                         >
                             <IconLoading />
-                            取消
+                            {t('Cancel')}
                         </Button>
                     </div>
                 </div>

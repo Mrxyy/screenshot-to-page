@@ -130,10 +130,10 @@ export async function streamingOpenAIResponses(
     });
     let full_response = '';
     const stream: any = res.body;
-    let decoder = new TextDecoder();
+    const decoder = new TextDecoder();
     let perText = '';
     for await (const chunk of stream) {
-        let string = decoder.decode(chunk);
+        const string = decoder.decode(chunk);
         const resArr = string
             .trim()
             .split(/\n\n/)
