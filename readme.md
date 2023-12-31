@@ -1,7 +1,7 @@
 [中文](./readme-zh.md)
 <h1 align="center">Screenshot to Page</h1>
 
-> **Turn screenshots, image links, or sketches into code with PT-4 Vision and convert them into web pages, with support for one-click deployment to the cloud ☁️**.
+> **Convert screenshots, image links, or sketches into code using LLM (supporting OpenAi、 Gemini) technology, and transform them into web pages with the ability to deploy to the cloud with just one click ☁️.**
 
 + [Online address](https://screenshot-to-page.vercel.app/) (**Click to experience**, no need to fill in any).
 
