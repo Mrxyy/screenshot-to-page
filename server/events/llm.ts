@@ -1,4 +1,4 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } from '@google/generative-ai';
 
 // 功能函数，用于从base64数据URL中提取MIME类型和纯base64数据部分
 function extractMimeAndBase64(dataUrl: string) {
@@ -48,6 +48,25 @@ function transformData(data: Record<any, any>[]) {
     ];
 }
 
+const safetySettings = [
+    {
+        category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+        threshold: HarmBlockThreshold.BLOCK_NONE,
+    },
+    {
+        category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+        threshold: HarmBlockThreshold.BLOCK_NONE,
+    },
+    {
+        category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+        threshold: HarmBlockThreshold.BLOCK_NONE,
+    },
+    {
+        category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+        threshold: HarmBlockThreshold.BLOCK_NONE,
+    },
+];
+
 async function useGeminiResponse([messages, callback, params]: Parameters<
     typeof streamingOpenAIResponses
 >) {
@@ -64,6 +83,7 @@ async function useGeminiResponse([messages, callback, params]: Parameters<
     const result = await model.generateContentStream({
         contents: contents,
         generationConfig,
+        safetySettings,
     });
 
     let text = '';
