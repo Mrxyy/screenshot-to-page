@@ -40,7 +40,7 @@
 docker run -p  3000:3000 jadenxiong/screenshot-to-page
 ```
 ### Vercel
-+ Click the button on the right to start deployment: ![Deploy with Vercel](https://vercel.com/button)
++ Click the button on the right to start deployment: [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?s=https%3A%2F%2Fgithub.com%2FMrxyy%2Fscreenshot-to-page&hasTrialAvailable=1&showOptionalTeamCreation=false&project-name=screenshot-to-page&framework=nextjs&totalProjects=1&remainingProjects=1&env=OPENAI_API_KEY)
 + Once deployed, you can start using it;
 + (Optional) [Bind a custom domain](https://vercel.com/docs/concepts/projects/domains/add-a-domain): The DNS of the domain assigned by Vercel is polluted in some regions, binding a custom domain will allow direct connection.
  

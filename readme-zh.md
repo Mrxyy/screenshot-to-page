@@ -38,7 +38,7 @@
 docker run -p  3000:3000 jadenxiong/screenshot-to-page
 ```
 ### vercel
-+ 点击右侧按钮开始部署：![Deploy with Vercel](https://vercel.com/button)
++ 点击右侧按钮开始部署：[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?s=https%3A%2F%2Fgithub.com%2FMrxyy%2Fscreenshot-to-page&hasTrialAvailable=1&showOptionalTeamCreation=false&project-name=screenshot-to-page&framework=nextjs&totalProjects=1&remainingProjects=1&env=OPENAI_API_KEY)
 + 部署完毕后，即可开始使用；
 + （可选）[绑定自定义域名](https://vercel.com/docs/concepts/projects/domains/add-a-domain)：Vercel 分配的域名 DNS 在某些区域被污染了，绑定自定义域名即可直连。
  
