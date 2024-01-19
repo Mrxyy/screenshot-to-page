@@ -78,6 +78,10 @@ body[arco-theme='dark'] {
     --white-bg: rgb(217, 217, 217);
     --pc: rgb(var(--primary-6));
 
+    .bg-white {
+        background-color: var(--color-bg-1);
+    }
+
     .shadow {
         --tw-shadow: 0 1px 3px 0 rgb(200 200 200 / 0.5), 0 1px 2px -1px rgb(200 200 200 / 0.1);
     }
@@ -224,7 +228,7 @@ body[arco-theme='dark'] {
 
     .arco-input-group {
         .arco-input-inner-wrapper {
-            background: #fff;
+            background: var(--color-bg-1);
             border-radius: 10px;
         }
     }
@@ -236,7 +240,7 @@ body[arco-theme='dark'] {
 
     .arco-input-group {
         .arco-input-inner-wrapper {
-            background: #fff;
+            background: var(--color-bg-1);
             border-radius: 5px;
             @apply border border-[var(--pc)]  transition-all;
             &.arco-input-inner-wrapper-focus {
