@@ -20,7 +20,7 @@
 
 + 2023/12/31 📅: Support google Gemini (free).
 
-+ 2024/01/19 📅: Complete Code Sandbox [code-live-sandbox](https://github.com/Mrxyy/code-live-sandbox) 。
++ 2024/01/19 📅: Complete Code Sandbox [code-live-sandbox](https://github.com/Mrxyy/code-live-sandbox).
 
 ## Distinctions 🏄🏿‍♂️
 + Better suited for developers familiar with the js/ts tech stack to get started quickly.
