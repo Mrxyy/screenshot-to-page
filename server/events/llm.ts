@@ -141,13 +141,13 @@ export async function streamingOpenAIResponses(
             authorization: `Bearer ${authorization}`,
             'content-type': 'application/json',
         },
-        referrer: '',
         referrerPolicy: 'strict-origin-when-cross-origin',
         body,
         method: 'POST',
         mode: 'cors',
         credentials: 'include',
     });
+
     let full_response = '';
     const stream: any = res.body;
     const decoder = new TextDecoder();

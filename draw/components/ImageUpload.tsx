@@ -19,7 +19,7 @@ const baseStyle = {
     borderRadius: 2,
     borderColor: '#eeeeee',
     borderStyle: 'dashed',
-    backgroundColor: '#fafafa',
+    backgroundColor: 'var(--color-bg-3)',
     color: '#bdbdbd',
     outline: 'none',
     transition: 'border .24s ease-in-out',
@@ -145,7 +145,7 @@ function ImageUpload({ setReferenceImages }: Props) {
     const { t } = useTranslation('draw');
     return (
         <section className="container">
-            <div {...getRootProps({ style: style as any })}>
+            <div {...getRootProps({ style: style as any })} className="upload-image">
                 <input {...getInputProps()} />
                 <div className="flex justify-center items-center bg-gray-100 rounded-lg w-[300px] shadow-lg ">
                     <div className="p-6">
