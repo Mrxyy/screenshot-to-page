@@ -37,7 +37,7 @@ async function fetchImageAsBlob(imageUrl: string) {
     const file = new File([blob], 'comfyci.png', { type: 'image/png' });
     return file;
 }
-const baseURL = process.env.QWEN_URL;
+const baseURL: string = process.env.QWEN_URL!;
 async function handleOpenAi(messages: any) {
     const app = await client(baseURL);
     let data = [null];
