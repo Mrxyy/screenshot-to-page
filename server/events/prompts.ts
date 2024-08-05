@@ -258,9 +258,10 @@ export function assemblePrompt(
     image_data_url: string,
     generated_code_config: string,
     promptCode: string,
-    result_image_data_url = ''
+    result_image_data_url: string = ''
 ) {
-    const systemConent = SYSTEM_MAP[generated_code_config] || TAILWIND_SYSTEM_PROMPT;
+    const systemContent =
+        SYSTEM_MAP[generated_code_config as keyof typeof SYSTEM_MAP] || TAILWIND_SYSTEM_PROMPT;
 
     const userContent = [
         {
@@ -281,7 +282,7 @@ export function assemblePrompt(
     return [
         {
             role: 'system',
-            content: systemConent,
+            content: systemContent,
         },
         {
             role: 'user',

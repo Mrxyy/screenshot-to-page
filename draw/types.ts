@@ -27,7 +27,7 @@ export interface Settings {
     accessCode: string | null;
     mockAiResponse: boolean;
     promptCode: string;
-    llm: 'Gemini' | 'OpenAi';
+    llm: 'Gemini' | 'OpenAi' | 'Qwen-VL';
 }
 
 export enum AppState {

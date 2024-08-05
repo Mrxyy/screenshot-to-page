@@ -71,7 +71,7 @@ async function useGeminiResponse([messages, callback, params]: Parameters<
     typeof streamingOpenAIResponses
 >) {
     let genAI = new GoogleGenerativeAI(params.openAiApiKey || process.env['OPENAI_API_KEY']);
-    const model = genAI.getGenerativeModel({ model: 'gemini-pro-vision' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
     const generationConfig = {
         temperature: 0,
         topK: 32,
@@ -101,6 +101,29 @@ async function useGeminiResponse([messages, callback, params]: Parameters<
     text += perText;
     return text;
 }
+const extractHtmlWithTags = (inputString: string) => {
+    // 定义正则表达式来匹配 <html> 标签及其内容
+    const regex = /<html[^>]*>[\s\S]*?<\/html>/i;
+
+    // 使用正则表达式进行匹配
+    const match = inputString.match(regex);
+
+    // 如果匹配成功，返回匹配到的内容，否则返回 null
+    return match ? match[0] : null;
+};
+
+async function useQwenResponse([messages, callback, params]: Parameters<
+    typeof streamingOpenAIResponses
+>) {
+    const form = new FormData();
+    form.append('messages', JSON.stringify(messages));
+    const response = await fetch((process.env['ORIGIN'] || 'http://localhost:3000') + '/api/qwen', {
+        method: 'POST', // 或者 'POST'，根据 api/b 的需要
+        body: form,
+    });
+    const { text } = await response.json();
+    return extractHtmlWithTags(text);
+}
 
 export async function streamingOpenAIResponses(
     messages: any[],
@@ -114,13 +137,17 @@ export async function streamingOpenAIResponses(
         const full_response = await useGeminiResponse([messages, callback, params]);
         return full_response;
     }
+    if (params.llm === 'Qwen-VL') {
+        return await useQwenResponse([messages, callback, params]);
+    }
+
     if (!params.openAiApiKey) {
         callback('No openai key', 'error');
         return '';
     }
 
     const openAi = [
-        'gpt-4-vision-preview',
+        'gpt-4o-mini',
         params.openAiApiKey || process.env['OPENAI_API_KEY'],
         process.env['OPENAI_BASE_URL'] || 'https://api.openai.com/v1/chat/completions',
     ];

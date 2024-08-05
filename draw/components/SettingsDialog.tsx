@@ -23,6 +23,9 @@ const llm = {
     OpenAi: {
         title: 'OpenAi',
     },
+    'Qwen-VL': {
+        title: 'Qwen-VL',
+    },
 };
 function SettingsDialog({ settings, setSettings, Config }: Props) {
     const [visible, setVisible] = React.useState(false);
@@ -77,6 +80,7 @@ function SettingsDialog({ settings, setSettings, Config }: Props) {
                         </RadioGroup>
                     </FormItem>
                     <FormItem
+                        hidden={settings.llm === 'Qwen-VL'}
                         label="API key"
                         extra={t(
                             'Only stored in your browser. Will not be stored on the server. Override your .env configuration.'
@@ -94,8 +98,8 @@ function SettingsDialog({ settings, setSettings, Config }: Props) {
                             }
                         />
                     </FormItem>
-                    {settings.llm}
-                    {!IS_RUNNING_ON_CLOUD && settings.llm !== 'Gemini' && (
+                    {['Gemini', 'Qwen-VL'].includes(settings.llm) ? null : settings.llm}
+                    {!IS_RUNNING_ON_CLOUD && !['Gemini', 'Qwen-VL'].includes(settings.llm) && (
                         <>
                             <FormItem
                                 label="Base URL"
@@ -105,9 +109,11 @@ function SettingsDialog({ settings, setSettings, Config }: Props) {
                             >
                                 <Input
                                     id="openai-base-url"
-                                    placeholder={t(
-                                        'If you dont want to use the default URL, replace it with the proxy URL.'
-                                    )}
+                                    placeholder={
+                                        t(
+                                            'If you dont want to use the default URL, replace it with the proxy URL.'
+                                        ) as string
+                                    }
                                     value={settings.openAiBaseURL || ''}
                                     onChange={e =>
                                         setSettings(s => ({

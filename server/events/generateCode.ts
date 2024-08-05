@@ -76,7 +76,7 @@ export async function streamGenerateCode(
     } else {
         try {
             completion = await streamingOpenAIResponses(
-                prompt_messages,
+                prompt_messages!,
                 (content: string, event?: string) => {
                     if (event === 'error') {
                         noticeHost({

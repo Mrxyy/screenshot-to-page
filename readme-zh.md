@@ -1,6 +1,6 @@
 <h1 align="center">screenshot-to-page</h1>
 
-> **可以将截图、图片链接、绘制草图LLM（支持OpenAi、Gemini）生成代码和前端页面，支持一键部署 ☁️**。
+> **可以将截图、图片链接、绘制草图LLM（支持OpenAi、Gemini、 Qwen-VL（开源））生成代码和前端页面，支持一键部署 ☁️**。
 
 + [线上地址](https://screenshot-to-page.vercel.app/) (**点击即可体验**，你不需要填写任何内容)。
 
@@ -20,17 +20,23 @@
 
 + 2023/12/31 📅: 支持谷歌Gemini（免费）。
 
++ 2024/01/19 📅：完成代码沙盒 [code-live-sandbox](https://github.com/Mrxyy/code-live-sandbox)。
+
++ 2024/08/05📅: 支持谷歌 Qwen-VL（开源大模型）。
+
 ## 区别 🏄🏿‍♂️
 + 更加适合js/ts技术栈开发人员快速上手。
 + 免费的无服务器的云平台部署。
 + 支持excalidraw绘制。
 + 支持谷歌Gemini（免费）。
++ 支持开源大模型(Qwen-VL)。
 
 ## 计划 🌄
 + 实现代码沙箱，支持现代化、工程化的编码方式 （很快就会到来啦，代码基本已经完成）。
 + 实现局部修改更新，类似V0。
 + ~~I18n~~
 + ~~支持谷歌Gemini~~
++ ~~支持开源大模型~~
 
 ## 部署 🪤
 ### docker 

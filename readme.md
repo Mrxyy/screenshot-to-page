@@ -22,17 +22,21 @@
 
 + 2024/01/19 📅: Complete Code Sandbox [code-live-sandbox](https://github.com/Mrxyy/code-live-sandbox).
 
++ 2024/08/05 📅: Supporting Google's Qwen-VL (open-source large model).
+
 ## Distinctions 🏄🏿‍♂️
 + Better suited for developers familiar with the js/ts tech stack to get started quickly.
 + Free serverless cloud platform deployment.
 + Support for Excalidraw sketches.
 + Support google Gemini (free).
++ Support the open-source large model (Qwen-VL).
 
 ## Plans 🌄
 + Implement a code sandbox to support modern, engineered coding practices (coming very soon, the codebase is almost complete).
 + Implement partial update features, similar to V0.
 + ~~I18n~~
 + ~~Support google Gemini~~.
++ ~~Support open-source large model~~
 
 ## Deployment 🪤
 ### Docker
