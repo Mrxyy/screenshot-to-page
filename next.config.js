@@ -11,6 +11,7 @@ const rewrites = async () => {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    output: "standalone",
     transpilePackages: [],
     reactStrictMode: true,
     publicRuntimeConfig: {

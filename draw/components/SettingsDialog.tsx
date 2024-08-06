@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useMemo, useState } from 'react';
 import { FaCog } from 'react-icons/fa';
 import { Settings } from '../types';
 
@@ -30,6 +30,24 @@ const llm = {
 function SettingsDialog({ settings, setSettings, Config }: Props) {
     const [visible, setVisible] = React.useState(false);
     const { t } = useTranslation('draw');
+    const tipContent = useMemo(()=>{
+        switch( settings.llm){
+            case 'Gemini': 
+                return t(
+                    "If you haven't applied for Gemini, the Gemini API key is not required."
+                );
+            case 'Qwen-VL': 
+                return <>
+                {t(
+                    "On the free Vercel server, access may not be available. You can try:"
+                )}
+                <a style={{
+                    "wordWrap": "break-word"
+                }} href={process.env.NEXT_PUBLIC_QWEN_VL_URL} className='text-[blue] inline' target='_blank'> {process.env.NEXT_PUBLIC_QWEN_VL_URL} </a>
+                </>;
+        }
+        return '';
+    },[ settings.llm])
     return (
         <>
             <Button
@@ -52,13 +70,9 @@ function SettingsDialog({ settings, setSettings, Config }: Props) {
                     <FormItem
                         label={t('Select model')}
                         extra={
-                            settings.llm === 'Gemini' ? (
                                 <span className="text-[var(--pc)]">
-                                    {t(
-                                        "If you haven't applied for Gemini, the Gemini API key is not required."
-                                    )}
+                                    {tipContent}
                                 </span>
-                            ) : null
                         }
                     >
                         <RadioGroup

@@ -51,7 +51,7 @@ export const generateCode = debounce(function (
         onComplete();
     });
 
-    const handleError = error => {
+    const handleError = (error:Error) => {
         if (error.name === 'AbortError') {
             // 处理中止错误
             console.error('Fetch aborted:', error);
