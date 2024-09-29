@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { FaHourglass } from 'react-icons/fa';
 import { IconDashboard } from '@arco-design/web-react/icon';
 import { Button } from '@arco-design/web-react';
-import fetchDomPageWrapper from '@/utils/FetchDomPackage';
+import fetchClientPageWrapper from '@/utils/fetchClientPageWrapper';
 import type {
     Excalidraw as ExcalidrawTypes,
     exportToCanvas as exportToCanvasTypes,
@@ -93,7 +93,7 @@ function Whiteboard({ doCreate, closeWhiteboardDialog }: Props) {
     );
 }
 
-export default fetchDomPageWrapper(
+export default fetchClientPageWrapper(
     Whiteboard,
     () => import('@excalidraw/excalidraw'),
     data => {

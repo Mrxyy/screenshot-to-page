@@ -1,12 +1,12 @@
 import { FunctionComponent, useEffect, useState } from 'react';
 
-export default function fetchDomPageWrapper<T, P>(
+export default function fetchClientPageWrapper<T, P>(
     component: FunctionComponent<P>,
     fetchPackage: () => Promise<T>,
     effectCallFn: (data: T) => any
 ) {
     const Component = component;
-    return function FetchDomPageWrapper(props: P & JSX.IntrinsicAttributes) {
+    return function fetchClientPageWrapper(props: P & JSX.IntrinsicAttributes) {
         const [flag, setFlag] = useState(false);
         useEffect(() => {
             if (window) {
