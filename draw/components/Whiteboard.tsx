@@ -27,7 +27,6 @@ function Whiteboard({ doCreate, closeWhiteboardDialog }: Props) {
     useEffect(() => {
         setTheme(localStorage.getItem('theme')!);
     }, []);
-
     // const [canvasUrl, setCanvasUrl] = useState("");
 
     const exportImg = async () => {

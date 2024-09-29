@@ -1,5 +1,4 @@
 import { FunctionComponent, useEffect, useState } from 'react';
-
 export default function fetchClientPageWrapper<T, P>(
     component: FunctionComponent<P>,
     fetchPackage: () => Promise<T>,
