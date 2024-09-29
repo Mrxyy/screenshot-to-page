@@ -30,5 +30,6 @@
    "language": "语言",
    "Select model": "选择模型",
    "If you haven't applied for Gemini, the Gemini API key is not required.": "如果您尚未申请Gemini账户，Gemini API key 可不填。",
-   "Copied to clipboard": "已复制到剪贴板"
+   "Copied to clipboard": "已复制到剪贴板",
+   "On the free Vercel server, access may not be available. You can try:":"在免费的vercel服务器上可能不能访问，可以尝试:"
 }

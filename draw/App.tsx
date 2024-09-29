@@ -251,7 +251,6 @@ function App({ Config }: { Config?: FunctionComponent }) {
                 <Image.Preview
                     className=" border border-gray-200 rounded-md "
                     src={referenceImages[0]}
-                    alt="lamp"
                     visible={visible}
                     onVisibleChange={setVisible}
                 />
@@ -305,7 +304,7 @@ function App({ Config }: { Config?: FunctionComponent }) {
                         <div>
                             <div className="grid w-full gap-2">
                                 <Input.TextArea
-                                    placeholder={t('Tell Ai what do you want to modify...')}
+                                    placeholder={t('Tell Ai what do you want to modify...') || ''}
                                     onChange={value => setUpdateInstruction(value)}
                                     value={updateInstruction}
                                 />

@@ -1,7 +1,7 @@
 [中文](./readme-zh.md)
 <h1 align="center">Screenshot to Page</h1>
 
-> **Convert screenshots, image links, or sketches into code using LLM (supporting OpenAi、 Gemini) technology, and transform them into web pages with the ability to deploy to the cloud with just one click ☁️.**
+> **Convert screenshots, image links, or sketches into code using LLM (supporting OpenAi、 Gemini、  Qwen-VL (open-source )) technology, and transform them into web pages with the ability to deploy to the cloud with just one click ☁️.**
 
 + [Online address](https://screenshot-to-page.vercel.app/) (**Click to experience**, no need to fill in any).
 
