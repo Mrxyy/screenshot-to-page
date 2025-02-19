@@ -71,7 +71,7 @@ async function useGeminiResponse([messages, callback, params]: Parameters<
     typeof streamingOpenAIResponses
 >) {
     let genAI = new GoogleGenerativeAI(params.openAiApiKey || process.env['OPENAI_API_KEY']);
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
     const generationConfig = {
         temperature: 0,
         topK: 32,
@@ -93,12 +93,13 @@ async function useGeminiResponse([messages, callback, params]: Parameters<
             callback(perText);
             text += perText;
         }
-        const chunkText = text ? chunk.text() : chunk.text().replace(/^\s*```html/g, '');
+        const chunkText = chunk.text();
         perText = chunkText;
     }
     perText = perText.replace(/```\s*$/g, '');
     callback(perText);
     text += perText;
+    text = text.replace(/^\s*```html/g, '');
     return text;
 }
 const extractHtmlWithTags = (inputString: string) => {
@@ -131,7 +132,7 @@ export async function streamingOpenAIResponses(
         (content: string, event?: string | undefined): void;
         (arg0: string, arg1: string | undefined): void;
     },
-    params: { openAiApiKey: any; openAiBaseURL: any; llm: string }
+    params: { openAiApiKey: any; openAiBaseURL: any; llm: string; modelName: string }
 ) {
     if (params.llm === 'Gemini') {
         const full_response = await useGeminiResponse([messages, callback, params]);
@@ -147,9 +148,11 @@ export async function streamingOpenAIResponses(
     }
 
     const openAi = [
-        'gpt-4o-mini',
+        params.modelName || 'gpt-4o-mini',
         params.openAiApiKey || process.env['OPENAI_API_KEY'],
-        process.env['OPENAI_BASE_URL'] || 'https://api.openai.com/v1/chat/completions',
+        params.openAiBaseURL ||
+            process.env['OPENAI_BASE_URL'] ||
+            'https://api.openai.com/v1/chat/completions',
     ];
 
     const [model, authorization, url] = openAi;
@@ -174,7 +177,6 @@ export async function streamingOpenAIResponses(
         mode: 'cors',
         credentials: 'include',
     });
-
     let full_response = '';
     const stream: any = res.body;
     const decoder = new TextDecoder();

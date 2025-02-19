@@ -30,24 +30,30 @@ const llm = {
 function SettingsDialog({ settings, setSettings, Config }: Props) {
     const [visible, setVisible] = React.useState(false);
     const { t } = useTranslation('draw');
-    const tipContent = useMemo(()=>{
-        switch( settings.llm){
-            case 'Gemini': 
-                return t(
-                    "If you haven't applied for Gemini, the Gemini API key is not required."
+    const tipContent = useMemo(() => {
+        switch (settings.llm) {
+            case 'Gemini':
+                return t("If you haven't applied for Gemini, the Gemini API key is not required.");
+            case 'Qwen-VL':
+                return (
+                    <>
+                        {t('On the free Vercel server, access may not be available. You can try:')}
+                        <a
+                            style={{
+                                wordWrap: 'break-word',
+                            }}
+                            href={process.env.NEXT_PUBLIC_QWEN_VL_URL}
+                            className="text-[blue] inline"
+                            target="_blank"
+                        >
+                            {' '}
+                            {process.env.NEXT_PUBLIC_QWEN_VL_URL}{' '}
+                        </a>
+                    </>
                 );
-            case 'Qwen-VL': 
-                return <>
-                {t(
-                    "On the free Vercel server, access may not be available. You can try:"
-                )}
-                <a style={{
-                    "wordWrap": "break-word"
-                }} href={process.env.NEXT_PUBLIC_QWEN_VL_URL} className='text-[blue] inline' target='_blank'> {process.env.NEXT_PUBLIC_QWEN_VL_URL} </a>
-                </>;
         }
         return '';
-    },[ settings.llm])
+    }, [settings.llm]);
     return (
         <>
             <Button
@@ -69,11 +75,7 @@ function SettingsDialog({ settings, setSettings, Config }: Props) {
                 <Form layout="vertical">
                     <FormItem
                         label={t('Select model')}
-                        extra={
-                                <span className="text-[var(--pc)]">
-                                    {tipContent}
-                                </span>
-                        }
+                        extra={<span className="text-[var(--pc)]">{tipContent}</span>}
                     >
                         <RadioGroup
                             value={settings.llm}
@@ -115,6 +117,18 @@ function SettingsDialog({ settings, setSettings, Config }: Props) {
                     {['Gemini', 'Qwen-VL'].includes(settings.llm) ? null : settings.llm}
                     {!IS_RUNNING_ON_CLOUD && !['Gemini', 'Qwen-VL'].includes(settings.llm) && (
                         <>
+                            <FormItem label="Model Name">
+                                <Input
+                                    id="openai-base-url"
+                                    value={settings.modelName || 'gpt-4o-mini'}
+                                    onChange={e =>
+                                        setSettings(s => ({
+                                            ...s,
+                                            modelName: e,
+                                        }))
+                                    }
+                                />
+                            </FormItem>
                             <FormItem
                                 label="Base URL"
                                 extra={t(

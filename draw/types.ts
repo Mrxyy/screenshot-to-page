@@ -27,6 +27,7 @@ export interface Settings {
     accessCode: string | null;
     mockAiResponse: boolean;
     promptCode: string;
+    modelName: string;
     llm: 'Gemini' | 'OpenAi' | 'Qwen-VL';
 }
 
